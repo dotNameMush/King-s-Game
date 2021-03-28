@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's game</title>
+    <!-- style -->
+    <style>
+        @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+        * {
+        margin: 0px;
+        padding: 0px;
+        }
+        .nav-top {
+        height: auto;
+        width: 100%;
+        background-color: black;
+        }
+        .nav-logo {
+        border-radius: 30%;
+        display: block;
+        width: 70px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 10px;
+        }
+        .nav-title {
+        text-align: center;
+        color: goldenrod;
+        font-size: 34px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding-bottom: 10px;
+        }
+        body {
+        background-color: #00071c;
+        }
+        .get-button {
+        background-color: #00071c;
+        display: inline-block;
+        padding: 10px;
+        border: 0.1em solid #ffffff;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 300;
+        color: #ffffff;
+        text-align: center;
+        transition: all 0.2s;
+        }
+        .get-button:hover {
+        color: #000000;
+        background-color: #ffffff;
+        }
+        h1 {
+        font-weight: bold;
+        font-style: 32px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-color-king {
+        color: goldenrod;
+        }
+        .text-center {
+        text-align: center;
+        }
+        .center {
+        margin: auto;
+        width: 50%;
+        border: 3px solid goldenrod;
+        padding: 15px;
+        }
+        .card-box {
+        margin: auto;
+        width: 50%;
+        }
+        .card {
+        width: 200px;
+        }
+        
+        .loader {
+            border: 6px solid #f3f3f3; /* Light grey */
+            border-top: 6px solid #fdbe10; /* Blue */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 2s linear infinite;
+            margin: auto;
+            margin-top: 10px;
+            }
+
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    }
+    </style>
+    <!-- Script -->
+    <script>
+        function card() {
+            var num = Math.floor(Math.random() * 13) + 1;
+            document.getElementById("card").src = "img/loading.jpg";
+            setTimeout(function() {
+                document.getElementById("card").src = "img/cards/" + num + ".png";
+            }, 500);
+            
+        }
+        function number() {
+            var player = document.getElementById('playerCount').value;
+            var num = Math.floor(Math.random() * player) + 1;
+            document.getElementById("load").classList.add("loader");
+            document.getElementById("number").innerHTML = " ";
+            setTimeout(function() {
+
+                document.getElementById("load").classList.remove('loader');
+                document.getElementById("load").classList.add("text-color-king");
+                document.getElementById("number").innerHTML = num + " Will be punished";
+            }, 500);
+            document.getElementById("playerCount").value = player;
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-top">
+        <a href="index.html">
+            <img src="img/logo.png" alt="King's crown logo" class="nav-logo">
+        </a>
+        <h1 class="nav-title">King's Game</h1>
+    </nav>
+    <form onsubmit="results()">
+        <fieldset style="padding: 3px; margin-bottom: 5px;">
+            <legend class="text-color-king">Settings</legend>
+            <label for="count" class="text-color-king">Player count</label><br>
+            <input type="text" id="playerCount">
+        </fieldset>
+    </form>
+    <!-- Game menu -->
+    <h1 class="text-center text-color-king">Menu</h1>
+    <div class="center">
+        <button onclick="card()" class="get-button">Get Card</button>
+        <button onclick="number()" class="get-button">Get number</button>
+    </div>
+    <div class="text-color-king" id="load"></div>
+    <h1 id="number" class="text-color-king text-center"></h1>
+    <!-- Card display -->
+    <div class="card-box">
+        <img src="img/black.png" alt="Card will appear here" id="card" class="card center-img">
+    </div>
+</body> 
+</html>
