@@ -40,7 +40,7 @@
         display: inline-block;
         padding: 10px;
         border: 0.1em solid #ffffff;
-        margin: 0 0.3em 0.3em 0;
+        margin: auto;
         border-radius: 0.12em;
         box-sizing: border-box;
         text-decoration: none;
@@ -49,6 +49,7 @@
         color: #ffffff;
         text-align: center;
         transition: all 0.2s;
+        margin: 0;
         }
         .get-button:hover {
         color: #000000;
@@ -66,10 +67,13 @@
         text-align: center;
         }
         .center {
-        margin: auto;
-        width: 50%;
-        border: 3px solid goldenrod;
-        padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 50%;
+            border: 3px solid goldenrod;
+            padding: 15px;
         }
         .card-box {
         margin: auto;
@@ -77,6 +81,16 @@
         }
         .card {
         width: 200px;
+        }
+        .text-lh {
+            font-weight: bold;
+            font-size: 24px;
+            color: #ff7b00;
+        }
+        .text-li {
+            font-size: 18px;
+            color: #ffdba4b0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .loader {
@@ -99,7 +113,7 @@
     <!-- Script -->
     <script>
         function card() {
-            var num = Math.floor(Math.random() * 13) + 1;
+            var num = Math.floor(Math.random() * 16) + 1;
             document.getElementById("card").src = "img/loading.jpg";
             setTimeout(function() {
                 document.getElementById("card").src = "img/cards/" + num + ".png";
@@ -129,13 +143,11 @@
         </a>
         <h1 class="nav-title">King's Game</h1>
     </nav>
-    <form onsubmit="results()">
-        <fieldset style="padding: 3px; margin-bottom: 5px;">
-            <legend class="text-color-king">Settings</legend>
-            <label for="count" class="text-color-king">Player count</label><br>
-            <input type="text" id="playerCount">
-        </fieldset>
-    </form>
+    <fieldset style="padding: 3px; margin-bottom: 5px;">
+        <legend class="text-color-king">Settings</legend>
+        <label for="count" class="text-color-king">Player count</label><br>
+        <input type="text" id="playerCount">
+    </fieldset>
     <!-- Game menu -->
     <h1 class="text-center text-color-king">Menu</h1>
     <div class="center">
@@ -147,6 +159,44 @@
     <!-- Card display -->
     <div class="card-box">
         <img src="img/black.png" alt="Card will appear here" id="card" class="card center-img">
+    </div>
+    <div>
+        <fieldset>
+            <legend class="text-color-king" >Punishments</legend>
+            <ul class="text-li" style="padding: 15px;">
+                <li class="text-color-king">2: Чи - дурын хүн сонгож уулгуулна</li>
+                <li>3: Би - Сугалсан хүн ууна</li>
+                <li class="text-color-king">4: Шал - Бүгд уралдаж сугалсан хүний гаран дээр гараа тавина. Хоцорсон хүн шийтгүүлнэ.</li>
+                <li>5: Guys - Эрчүүд ууна</li>
+                <li class="text-color-king">6: Chicks - Эмэгтэйчүүд ууна</li>
+                <li>7: Heaven - Бүх тоглогч тэнгэрлүү зааж сүүлд биелүүлсэн хүн ууна.</li>
+                <li class="text-color-king">8: Mate - 3 удаа ямар ч шийтгэл шагнал авсан хамт биелүүлэх хүн өөрийн дураар сонгоно.</li>
+                <li>9: Prison - 3 үеийн турш шоронд хоригдно. Шинэ хоригдогч орж ирвэл хүссэнээрээ дарамталж болно.</li>
+                <li class="text-color-king">10: Хүссэн уух зүйлээ хааны аяга руу хийнэ. Дүүртэл хийж болохгүй. Дүүрэн байвал шууд ууна.</li>
+                <li>Jack: Never have I ever - Бүгд 3 хуруу гаргаж сугалсан хүнээс эхэлж хийж байгаагүй зүйлээ хэлнэ. Хэлсэн зүйлийг нь хийж байсан хүн 1 хуруугаа буулгаж эхэнд ялагдсан хүн хатуу юм ууна.</li>
+                <li class="text-color-king">Queen: Questions - Сугалсан хүн random хүн сонгож асуулт асууна. Асуугдагч дахин сонгож асуулт асуусаар хариулж/асууж чадаагүй хүн ууж дуусна.</li>
+                <li>King: Ruler - Хүн болгон заавал мөрдөх зарилаг дараагын хаан гарж иртэл гаргана.</li>
+                <li class="text-color-king">Ace Diamond: Waterfall - Бүх хүн ууна.</li>
+                <li class="text-color-king">Ace Heart: Сэтгэлээ илчилэх - Сугалсан хүн дотроо нуугдсан хүслээ ил болгоно.</li>
+                <li class="text-color-king">Ace Clover: Love Room - Random хүн сонгож өрөө эсвэл шүүгээрүү хамт 5 минут орно.(Get number-ийг ашиглана)</li>
+                <li class="text-color-king">Ace Spade: Чөтгөр - Random хүн сонгож хамгийн хорон муухай шийтгэл оногдуул</li>
+
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend class="text-color-king">Rules</legend>
+            <ul class="text-li" style="padding: 5px;">
+                <li class="text-lh">Setup</li>
+                <li>-Enter the number of players in the settings. Get number button will not work otherwise.</li>
+                <li>-Have a drinking cup in the middle of the table or players. This will be "The King's cup"</li>
+                <li>-Each player need to be numbered. You can write it or memorize it.</li>
+                <li class="text-lh">Rules</li>
+                <li>-Players will decide who will start the round. Player will press "get card" button to draw a card.</li>
+                <li>-Player who pressed the button will announce the order correlated to the card.</li>
+                <li>-If the order is to punish random player, "Get Number" button shall be pressed and the order will announce who will be punished with their number.</li>
+            </ul>
+        </fieldset>
+        
     </div>
 </body> 
 </html>
