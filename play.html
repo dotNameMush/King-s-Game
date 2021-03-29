@@ -113,7 +113,16 @@
     <!-- Script -->
     <script>
         function card() {
+            
             var num = Math.floor(Math.random() * 16) + 1;
+            if (num == 13) {
+                var audio = new Audio('king.mp3');
+                audio.play();
+            }
+            if (num == 16) {
+                var audio = new Audio('devil.mp3');
+                audio.play();
+            }
             document.getElementById("card").src = "img/loading.jpg";
             setTimeout(function() {
                 document.getElementById("card").src = "img/cards/" + num + ".png";
