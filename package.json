@@ -1,0 +1,14 @@
+{
+  "name": "static-games",
+  "version": "1.0.0",
+  "description": "static web games",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o public/style.css"
+  },
+  "author": "Mungunshagai",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.1.1"
+  }
+}
