@@ -64,11 +64,11 @@ function cardLoad() {
     var action = cardAction(card, action);
     
     if (card == 13) {
-        var audio = new Audio('asset/mp3/king.mp3');
+        var audio = new Audio('assets/mp3/king.mp3');
         audio.play();
     }
     if (card == 16) {
-        var audio = new Audio('asset/mp3/devil.mp3');
+        var audio = new Audio('assets/mp3/devil.mp3');
         audio.play();
     }
 

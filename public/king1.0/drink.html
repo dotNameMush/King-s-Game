@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../app/css/style.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/b658ad5274.js"></script>
-    <title>Web Games</title>
-    <title>Document</title>
+    <title>King's Game</title>
     <script src="assets/js/game.js"></script>
     <style>
         .loader {
@@ -31,7 +27,7 @@
             }
     </style>
 </head>
-<body class="bg-indigo-900">
+<body class="bg-indigo-900" onkeypress="cardLoad()">
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="p-4 flex flex-row items-center justify-between">
@@ -67,17 +63,18 @@
             </nav>
         </div>
     </div>
+    <!-- Game logo -->
     <div class="flex flex-row md:flex-col justify-center items-center w-full h-24 md:h-40 bg-black">
         <img src="img/logo.png" class="w-16 h-16 rounded-2xl" alt="logo">
         <h1 class="text-4xl text-yellow-500 font-bold">King's game</h1>
     </div>
-    
+    <!-- Game Section -->
     <section>
-        <fieldset class="flex justify-inline border-2 border-gray-500 p-2">
+        <fieldset class="flex justify-inline border-2 border-gray-500 p-2 m-6">
             <legend class="text-yellow-600 text-3xl">Settings</legend>
             <label for="count" class="text-yellow-500 mr-3">Player count:</label><br>
             <input type="text" id="playerCount" value="1" class="bg-gray-200 rounded-sm">
-            <a href="rules.html" class="relative left-24 px-4 bg-yellow-500 rounded">Rules</a>
+            <a href="rules.html" class="mx-4 px-4 bg-yellow-500 rounded">Rules</a>
         </fieldset>
         <div class="grid place-items-center h-24 mt-4">
             <div>
@@ -90,9 +87,7 @@
                 <img id="card" src="img/purple_back.png" class="w-2/3" alt="card img">
                 <p id="cardAction" class="text-2xl text-yellow-600">Шийтгэл</p>
             </div>
-            
         </div>
-        
     </section>
     
     
