@@ -40,7 +40,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../index.html">Home</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Games</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
                 
@@ -71,21 +71,22 @@
     <!-- Game Section -->
     <section>
         <fieldset class="flex justify-inline border-2 border-gray-500 p-2 m-6">
-            <legend class="text-yellow-600 text-3xl">Settings</legend>
-            <label for="count" class="text-yellow-500 mr-3">Player count:</label><br>
+            <legend class="text-yellow-600 text-3xl">Тохиргоо</legend>
+            <label for="count" class="text-yellow-500 mr-3">Тоглогчдын тоо:</label><br>
             <input type="text" id="playerCount" value="1" class="bg-gray-200 rounded-sm">
-            <a href="rules.html" class="mx-4 px-4 bg-yellow-500 rounded">Rules</a>
+            <a href="rules.html" class="mx-4 px-4 bg-yellow-600 text-white rounded">Дүрэм</a>
         </fieldset>
+
         <div class="grid place-items-center h-24 mt-4">
             <div>
-                <button onclick="cardLoad()"class="uppercase px-8 py-2 rounded bg-yellow-300 text-yellow-600 max-w-max shadow-sm hover:shadow-lg">Get Card</button>
-                <button onclick="number()"class="uppercase px-8 py-2 rounded border border-yellow-600 text-yellow-600 max-w-max shadow-sm hover:shadow-lg">Get Random</button>
+                <button onclick="cardLoad()"class="uppercase font-bold px-8 py-2 rounded bg-yellow-600 text-white max-w-max shadow-sm hover:shadow-lg">Хөзөр сугалах</button>
+                <button onclick="number()"class="uppercase font-bold px-8 py-2 rounded border border-yellow-600 text-yellow-600 max-w-max shadow-sm hover:shadow-lg">Random хүн сонгох</button>
             </div>
             <div class="" id="load"></div>
             <h1 id="number" class="text-yellow-500">random player</h1>
             <div class="grid grid-cols-1 place-items-center p-3 md:grid-cols-2 w-2/3">
                 <img id="card" src="img/purple_back.png" class="w-2/3" alt="card img">
-                <p id="cardAction" class="text-2xl text-yellow-600">Шийтгэл</p>
+                <p id="cardAction" class="border border-yellow-600 p-6 mt-10 text-2xl text-yellow-600">Шийтгэл</p>
             </div>
         </div>
     </section>

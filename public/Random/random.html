@@ -4,30 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../app/css/style.css">
+    <link rel="stylesheet" href="app/css/style.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/b658ad5274.js"></script>
-    <title>King's Game</title>
-    <script src="assets/js/game2.js"></script>
-    <style>
-        .loader {
-            border: 6px solid #f3f3f3; /* Light grey */
-            border-top: 6px solid #fdbe10; /* Blue */
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 2s linear infinite;
-            margin: auto;
-            margin-top: 10px;
-            }
-
-            @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-            }
-    </style>
+    <script src="random.js"></script>
+    <title>Random</title>
 </head>
-<body class="bg-indigo-900" onkeypress="cardLoad()">
+<body onkeypress="cardLoad()">
     <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="p-4 flex flex-row items-center justify-between">
@@ -40,7 +22,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../index.html">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html">Home</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Games</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
                 
@@ -63,36 +45,19 @@
             </nav>
         </div>
     </div>
-    <!-- Game logo -->
-    <div class="flex flex-row md:flex-col justify-center items-center w-full h-24 md:h-40 bg-black">
-        <img src="img/logo.png" class="w-16 h-16 rounded-2xl" alt="logo">
-        <h1 class="text-4xl text-yellow-500 font-bold">King's game</h1>
-    </div>
-    <!-- Game Section -->
-    <section>
-        <fieldset class="flex justify-inline border-2 border-gray-500 p-2 m-6">
-            <legend class="text-yellow-600 text-3xl">Тохиргоо</legend>
-            <label for="count" class="text-yellow-500 mr-3">Тоглогчдын тоо:</label><br>
-            <input type="text" id="playerCount" value="1" class="bg-gray-200 rounded-sm">
-            <a href="rules.html" class="mx-4 px-4 bg-yellow-600 text-white rounded">Дүрэм</a>
-        </fieldset>
-
-        <div class="grid place-items-center h-24 mt-4">
-            <div>
-                <button onclick="cardLoad()"class="uppercase font-bold px-8 py-2 rounded bg-yellow-600 text-white max-w-max shadow-sm hover:shadow-lg">Хөзөр сугалах</button>
-                <button onclick="number()"class="uppercase font-bold px-8 py-2 rounded border border-yellow-600 text-yellow-600 max-w-max shadow-sm hover:shadow-lg">Random хүн сонгох</button>
-            </div>
-            <div class="" id="load"></div>
-            <h1 id="number" class="text-yellow-500">random player</h1>
-            <div class="grid grid-cols-1 place-items-center p-3 md:grid-cols-2 w-2/3">
-                <img id="card" src="img/purple_back.png" class="w-2/3" alt="card img">
-                <p id="cardAction" class="border border-yellow-600 p-6 mt-10 text-2xl text-yellow-600">Шийтгэл</p>
-            </div>
+    <!--Follow link for animation in action https://play.tailwindcss.com/IpRdROqEoQ -->
+<div class="bg-gray-50 min-h-screen flex items-center justify-center px-16">
+    <div class="relative w-full max-w-lg">
+      <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob "></div>
+      <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-32 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      <div class="m-8 relative space-y-4">
+        <div class="p-5 bg-white rounded-lg flex items-center justify-center space-x-8">
+          <h1 class="text-4xl" id="random">Random Person</h1>
         </div>
-    </section>
-    
-    
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
 </html>

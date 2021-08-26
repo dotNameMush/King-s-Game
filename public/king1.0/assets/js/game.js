@@ -3,7 +3,7 @@
 // Instagram = "munguu_bumi"
 // Visit index page to view links to my profile
 
-function cardPick(card) {
+function cardPick() {
     return Math.floor(Math.random() * 16) + 1;
 }
 function cardAction(card, action) {
@@ -89,7 +89,7 @@ function number() {
         document.getElementById("load").classList.remove('loader');
         document.getElementById("load").classList.add("text-yellow-500");
         alert(num + "Will be Punished");
-        document.getElementById("number").innerHTML = num + "/n Will be punished";
+        document.getElementById("number").innerHTML = num + " Will be punished";
     }, 500);
     document.getElementById("playerCount").value = player;
 }
