@@ -19,7 +19,7 @@ function cardAction(card, action) {
             action = "Сэргэлэн"
             return action;
         case 6:
-            action = "Сэржмядаг"
+            action = "Мягмардорж"
             return action;
       }
   }
@@ -63,7 +63,7 @@ function cardLoad(){
                     audio.play();
                 }
                 if (card == 6) {
-                    var audio = new Audio('serj.wav');
+                    var audio = new Audio('miigaa.wav');
                     audio.play();
                 }
                 document.getElementById("random").className = "text-6xl";
