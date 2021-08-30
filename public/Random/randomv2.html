@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app/css/style.css">
+    <title>Random</title>
+    <script src="randomv2.js"></script>
+</head>
+<body onload="classChange()">
+    <section class="bg-indigo-400 flex flex-col justify-center items-center h-screen" id="settings">
+      <h1 class="text-white text-xl">Before starting</h1>
+      <h1 class="text-white text-xl">Please add player names</h1>
+      <h1 class="text-white text-xl">Then press (Start)</h1>
+      <input type="text" hidden value="1" id="int">
+      <div id="nameStorage"></div>
+      <label for="name" class="mx-2 mt-12 text-2xl text-white font-bold">Add Player Names</label>
+      <div class="flex flex-inline p-2 mx-auto">
+        <input type="text" name="name" id="addname" class="rounded bg-gray-200">
+        <h1 onclick="submit()" class="p-1 px-2 rounded bg-green-500 text-white mx-2">Add</h1>
+      </div>
+      <div>
+        <div id="name1" class="text-xl font-bold text-white"></div>
+        <div id="name2" class="text-xl font-bold text-white"></div>
+        <div id="name3" class="text-xl font-bold text-white"></div>
+        <div id="name4" class="text-xl font-bold text-white"></div>
+        <div id="name5" class="text-xl font-bold text-white"></div>
+        <div id="name6" class="text-xl font-bold text-white"></div>
+        <div id="name7" class="text-xl font-bold text-white"></div>
+        <div id="name8" class="text-xl font-bold text-white"></div>
+        <div id="name9" class="text-xl font-bold text-white"></div>
+        <div id="name10" class="text-xl font-bold text-white"></div>
+        <div id="warning" class="text-red-600"></div>
+      </div>
+      <h1 onclick="done()" class="m-2 p-1 rounded bg-blue-500 text-white w-24 text-center">Start</h1>
+      
+    </section>
+        
+    
+    <section id="game">
+      <div id="wrap">
+        <div id="card">
+          <div id="s1"></div>
+          <div id="s2"></div>
+          <div id="s3"></div>
+          <div id="card-2">
+            <div onclick="cardLoad()" id="card-3">
+              <h1 id="random">Random Person</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
