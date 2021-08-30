@@ -1,3 +1,3 @@
 # King-s-Game
-Single page "Drinking Game" made with JS you can play with mobile browser <br>
+Javascript web games that you can play with any browser <br>
 Visit: https://dotnamemush.github.io/King-s-Game/ for demo
